@@ -2,21 +2,12 @@
 The project will contain listing of properties along with the information of each property.
 The search filter to search the properties according to the requirements.
 
+## Syntax to follow for README file creation
+[file] (https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
+
 ## Set python environment variable
 
-## To create Virtual environment
->
-cd e:
-mkdir btre_project
-cd btre_project
-python -m venv ./venv
-'''
-It will create venv to current project directory
-To activate Virtual Environment
-'''
-cd venv
-cd source
-activate
+### All the commands are according to git bash window (may not work on command prompt)
 
 ## GIT Initialization
 >git init
@@ -93,3 +84,21 @@ Because the development server is virtual machine
 To push the code to git, open new git bash window.
 Get to the project directory.
 And follow the git commands to push the code.
+
+## Create virtual environment
+> python -m venv ~/env
+
+This will create virtual environment. (Make sure you are in vagrant server).
+This is because we must not synchronize it with local machine.
+So if you ever need to destroy and recreate vagrant over from scratch you can do that with fresh  python virtual environment.
+
+To activate the environment...
+>source ~/env/bin/activate
+
+## Install packages into the virtual environment
+Make sure vagrant is running and virtual environment is activated
+>pip install -r requirements.txt
+
+## Activate the server
+
+> python manage.py runserver 0.0.0.0:8000
