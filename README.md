@@ -59,7 +59,7 @@ give name to repository (btre_project)
 ### Connect to Vagrant box
 > vagrant ssh
 
-cd /vagrant
+> cd /vagrant
 ### Disconnect from Vagrant box
 Note: This command is a standard linux command for ending an SSH session
 exit
