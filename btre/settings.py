@@ -80,10 +80,29 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'btre_db',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'admin@123',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '5432',
+    # }
+    #
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'btredb',
+    #     'USER': 'root',
+    #     'PASSWORD': 'admin@123',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '3306',
+    # }
 }
 
 
@@ -128,3 +147,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'btre/static')
 ]
+
+AUTH_USER_MODEL = 'pages.UserProfile'
