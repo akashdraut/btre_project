@@ -5,7 +5,7 @@ from django.contrib.auth.models import BaseUserManager
 from django.conf import settings
 
 from datetime import datetime  # for datatime field
-from realtor.models import Realtor
+from realtors.models import Realtor
 
 
 class UserProfileManager(BaseUserManager):
@@ -75,7 +75,7 @@ class Listing(models.Model):
     garage = models.IntegerField(default=0)
     sqft = models.IntegerField()
     lot_size = models.DecimalField(max_digits=5, decimal_places=2)
-    photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')
+    photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')  # For image field Pillow need to install
     photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_2 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_3 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
@@ -86,4 +86,5 @@ class Listing(models.Model):
     list_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
+        """ Return title of the property as string representation """
         return self.title
