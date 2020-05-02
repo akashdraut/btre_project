@@ -1,6 +1,16 @@
 from django.contrib import admin
 
-from . import models
+from .models import Listing
 
 
-admin.site.register(models.Listing)
+class ListingAdmin(admin.ModelAdmin):
+    """ To show the required fields on admin panel """
+    list_display = ('id', 'title', 'is_published', 'price', 'list_date', 'realtor')  # To display  field names
+    list_display_links = ('id', 'title')  # To make clickable link (title)
+    list_filter = ('realtor',)  # To filter according to the realtors
+    list_editable = ('is_published',)  # To make it editable (CheckBox)
+    search_fields = ('title', 'description', 'address', 'city', 'state', 'zipcode', 'price')  # Searchable fields
+    list_per_page = 25  # For listings per page
+
+
+admin.site.register(Listing, ListingAdmin)
