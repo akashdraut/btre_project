@@ -152,6 +152,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'btre/static')
 ]
 
+AUTH_USER_MODEL = 'pages.UserProfile'
+
 # Media folder settings
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
